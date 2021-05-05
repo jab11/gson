@@ -74,7 +74,7 @@ The Gson instance does not maintain any state while invoking Json operations. So
 ## <a name="TOC-Gson-With-Gradle"></a>Using Gson with Gradle/Android
 ```
 dependencies {
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 ```
 ## <a name="TOC-Gson-With-Maven"></a>Using Gson with Maven
@@ -86,7 +86,7 @@ To use Gson with Maven2/3, you can use the Gson version available in Maven Centr
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>2.8.5</version>
+      <version>2.8.6</version>
       <scope>compile</scope>
     </dependency>
 </dependencies>
@@ -301,11 +301,12 @@ This approach is practical only if the array appears as a top-level element or i
 
 ### <a name="TOC-Built-in-Serializers-and-Deserializers"></a>Built-in Serializers and Deserializers
 
-Gson has built-in serializers and deserializers for commonly used classes whose default representation may be inappropriate.
-Here is a list of such classes:
+Gson has built-in serializers and deserializers for commonly used classes whose default representation may be inappropriate, for instance
 
-1. `java.net.URL` to match it with strings like `"https://github.com/google/gson/"`
-2. `java.net.URI` to match it with strings like `"/google/gson/"`
+* `java.net.URL` to match it with strings like `"https://github.com/google/gson/"`
+* `java.net.URI` to match it with strings like `"/google/gson/"`
+
+For many more, see the internal class [`TypeAdapters`](https://github.com/google/gson/blob/master/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java).
 
 You can also find source code for some commonly used classes such as JodaTime at [this page](https://sites.google.com/site/gson/gson-type-adapters-for-common-classes-1).
 
